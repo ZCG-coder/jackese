@@ -1,0 +1,48 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="JsonStandardCompliance" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="JupyterPackageInspection" enabled="true" level="TEXT ATTRIBUTES" enabled_by_default="true" editorAttributes="CONSIDERATION_ATTRIBUTES" />
+    <inspection_tool class="PoetryPackageVersionsInspection" enabled="true" level="TEXT ATTRIBUTES" enabled_by_default="true" editorAttributes="CONSIDERATION_ATTRIBUTES" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="pathspec" />
+            <item index="1" class="java.lang.String" itemvalue="pytest" />
+            <item index="2" class="java.lang.String" itemvalue="iniconfig" />
+            <item index="3" class="java.lang.String" itemvalue="pluggy" />
+            <item index="4" class="java.lang.String" itemvalue="mypy-extensions" />
+            <item index="5" class="java.lang.String" itemvalue="black" />
+            <item index="6" class="java.lang.String" itemvalue="packaging" />
+            <item index="7" class="java.lang.String" itemvalue="click" />
+            <item index="8" class="java.lang.String" itemvalue="attrs" />
+            <item index="9" class="java.lang.String" itemvalue="platformdirs" />
+            <item index="10" class="java.lang.String" itemvalue="isort" />
+            <item index="11" class="java.lang.String" itemvalue="pyparsing" />
+            <item index="12" class="java.lang.String" itemvalue="AppKit" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E203" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N812" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="processCode" value="false" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
