@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.sass";
+import $ from "jquery";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends React.Component {
+    private worker?: Worker;
+
+    constructor(props: {} | Readonly<{}>) {
+        super(props);
+    }
+
+    keyUp(worker: Worker) {
+        let content = $("#EnglishText").val()?.toString();
+        worker?.postMessage(content);
+        worker?.addEventListener("message", (event) => {
+            $("#JackeseText").text(event.data);
+        });
+    }
+
+    componentDidMount() {
+        this.worker = new Worker(new URL("./Replace.ts", import.meta.url));
+        $(() => {
+            $("#EnglishText").on("keyup", () => {
+                this.keyUp(this.worker!);
+            });
+            this.keyUp(this.worker!);
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Translate to Jackese</h1>
+                <div id={"English"}>
+                    <p>English:</p>
+                    <textarea id={"EnglishText"} autoFocus={true} placeholder={"English"}>Insert text here...</textarea>
+                </div>
+                <div id={"Jackese"}>
+                    <p>Jackese:</p>
+                    <p id={"JackeseText"}>Jackese will appear here...</p>
+                </div>
+            </div>
+        );
+    }
 }
-
-export default App;
